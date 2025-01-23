@@ -2,65 +2,68 @@ using Infrastructure;
 using UnityEngine;
 using Zenject;
 
-public class InteractController : MonoBehaviour
+namespace Player
 {
-    public LayerMask LayerAtInteractItems;
-    public Transform CameraTransform;
-    public Camera PlayerCamera;
-    
-    private IInputService _inputService;
-    private GameObject _capturedItem;
-    
-    [Inject]
-    private void Constructor(IInputService inputService)
+    public class InteractController : MonoBehaviour
     {
-        _inputService = inputService;
-    }
-
-    void Update()
-    {
-        if (_inputService.Interact)
+        public LayerMask LayerAtInteractItems;
+        public Transform CameraTransform;
+        public Camera PlayerCamera;
+    
+        private IInputService _inputService;
+        private GameObject _capturedItem;
+    
+        [Inject]
+        private void Constructor(IInputService inputService)
         {
-            if (_capturedItem != null)
-            {
-                Ray ray = PlayerCamera.ScreenPointToRay(Input.mousePosition);
+            _inputService = inputService;
+        }
 
-                if (Physics.Raycast(ray, 10, LayerAtInteractItems))
+        void Update()
+        {
+            if (_inputService.Interact)
+            {
+                if (_capturedItem != null)
                 {
-                    Rigidbody rb = _capturedItem.GetComponent<Rigidbody>();
-                    if (rb != null)
+                    Ray ray = PlayerCamera.ScreenPointToRay(Input.mousePosition);
+
+                    if (Physics.Raycast(ray, 10, LayerAtInteractItems))
                     {
-                        rb.isKinematic = false;
-                        rb.useGravity = true;
+                        Rigidbody rb = _capturedItem.GetComponent<Rigidbody>();
+                        if (rb != null)
+                        {
+                            rb.isKinematic = false;
+                            rb.useGravity = true;
+                        }
+
+                        _capturedItem = null;
                     }
-
-                    _capturedItem = null;
                 }
-            }
-            else
-            {
-                Ray ray = PlayerCamera.ScreenPointToRay(Input.mousePosition);
-                
-                if (Physics.Raycast(ray, out RaycastHit hit, 10, LayerAtInteractItems))
+                else
                 {
-                    _capturedItem = hit.collider.gameObject;
-
-                    Rigidbody rb = _capturedItem.GetComponent<Rigidbody>();
-                    if (rb != null)
+                    Ray ray = PlayerCamera.ScreenPointToRay(Input.mousePosition);
+                
+                    if (Physics.Raycast(ray, out RaycastHit hit, 10, LayerAtInteractItems))
                     {
-                        rb.isKinematic = true;
-                        rb.useGravity = false;
+                        _capturedItem = hit.collider.gameObject;
+
+                        Rigidbody rb = _capturedItem.GetComponent<Rigidbody>();
+                        if (rb != null)
+                        {
+                            rb.isKinematic = true;
+                            rb.useGravity = false;
+                        }
                     }
                 }
             }
         }
-    }
 
-    private void LateUpdate()
-    {
-        if (_capturedItem != null)
+        private void LateUpdate()
         {
-            _capturedItem.transform.position = CameraTransform.transform.position + CameraTransform.transform.forward;
+            if (_capturedItem != null)
+            {
+                _capturedItem.transform.position = CameraTransform.transform.position + CameraTransform.transform.forward;
+            }
         }
     }
 }
