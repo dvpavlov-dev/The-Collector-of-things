@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5050677752957821442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 1274423164595496210}
   - component: {fileID: 8073691736942282583}
   - component: {fileID: 3060259466851049325}
+  - component: {fileID: 2792328841428091360}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -167,4 +168,20 @@ MonoBehaviour:
   MovementSpeed: 10
   RotationSpeed: 10
   CharacterController: {fileID: 8073691736942282583}
-  PlayerCamera: {fileID: 0}
+  CameraTransform: {fileID: 8599982302573902439}
+--- !u!114 &2792328841428091360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6468091180737137737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472bfcbdd5439a4495048d4f1c8d79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerAtInteractItems:
+    serializedVersion: 2
+    m_Bits: 64
+  CameraTransform: {fileID: 8599982302573902439}
