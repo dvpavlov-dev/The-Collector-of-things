@@ -165,10 +165,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104692f482f036644a6841119be442f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 10
-  RotationSpeed: 10
+  MovementSpeed: 2
+  RotationSpeed: 3
   CharacterController: {fileID: 8073691736942282583}
   CameraTransform: {fileID: 8599982302573902439}
+  _minClampVertical: -60
+  _maxClampVertical: 60
 --- !u!114 &2792328841428091360
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4895979703314963168}
   - component: {fileID: 4042009140763127214}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Center Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,10 +107,10 @@ RectTransform:
   - {fileID: 772579661928643462}
   m_Father: {fileID: 6350019261113473619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -751.303, y: 0}
-  m_SizeDelta: {x: 1502.605, y: 0}
+  m_AnchoredPosition: {x: 208.69702, y: 0}
+  m_SizeDelta: {x: -417.39502, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &247539233151246915
 CanvasRenderer:
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 7599100739047124747}
   - component: {fileID: 1498397570791743238}
   m_Layer: 5
-  m_Name: JumpButton
+  m_Name: TapButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button:
-    m_key: Fire1
+    m_key: Interact
     value: 0
 --- !u!1 &6496568243723729979
 GameObject:
@@ -399,11 +399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114282555968907678, guid: e0815e227ed46e445b99930271e8942c, type: 3}
       propertyPath: xAxis.m_key
-      value: Mouse X
+      value: X
       objectReference: {fileID: 0}
     - target: {fileID: 114282555968907678, guid: e0815e227ed46e445b99930271e8942c, type: 3}
       propertyPath: yAxis.m_key
-      value: Mouse Y
+      value: Y
       objectReference: {fileID: 0}
     - target: {fileID: 114282555968907678, guid: e0815e227ed46e445b99930271e8942c, type: 3}
       propertyPath: isDynamicJoystick

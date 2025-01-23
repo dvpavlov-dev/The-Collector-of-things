@@ -6,9 +6,7 @@ namespace Infrastructure
     {
         protected const string HORIZONTAL = "Horizontal";
         protected const string VERTICAL = "Vertical";
-        protected const string MOUSE_X = "Mouse X";
-        protected const string MOUSE_Y = "Mouse Y";
-        protected const string BUTTON = "Fire1";
+        protected const string BUTTON = "Interact";
     
         public abstract Vector2 MoveAxis { get; }
         public abstract Vector2 RotateAxis { get; }

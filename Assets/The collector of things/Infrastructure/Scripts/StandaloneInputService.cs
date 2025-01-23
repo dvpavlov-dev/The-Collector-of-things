@@ -4,6 +4,9 @@ namespace Infrastructure
 {
     public class StandaloneInputService : InputService
     {
+        private const string MOUSE_X = "Mouse X";
+        private const string MOUSE_Y = "Mouse Y";
+        
         public override Vector2 MoveAxis => UnityMoveAxis();
         public override Vector2 RotateAxis => UnityRotateAxis();
         public override bool Interact => Input.GetButtonDown(BUTTON);

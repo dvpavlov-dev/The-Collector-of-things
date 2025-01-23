@@ -4,6 +4,9 @@ namespace Infrastructure
 {
     public class MobileInputService : InputService
     {
+        private const string MOUSE_X = "X";
+        private const string MOUSE_Y = "Y";
+        
         public override Vector2 MoveAxis => SimpleMoveAxis();
         public override Vector2 RotateAxis => SimpleRotateAxis();
         public override bool Interact => SimpleInput.GetButtonDown(BUTTON);
