@@ -6,6 +6,7 @@ public class InteractController : MonoBehaviour
 {
     public LayerMask LayerAtInteractItems;
     public Transform CameraTransform;
+    public Camera PlayerCamera;
     
     private IInputService _inputService;
     private GameObject _capturedItem;
@@ -22,20 +23,25 @@ public class InteractController : MonoBehaviour
         {
             if (_capturedItem != null)
             {
-                Rigidbody rb = _capturedItem.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.isKinematic = false;
-                    rb.useGravity = true;
-                }
+                Ray ray = PlayerCamera.ScreenPointToRay(Input.mousePosition);
 
-                _capturedItem = null;
+                if (Physics.Raycast(ray, 10, LayerAtInteractItems))
+                {
+                    Rigidbody rb = _capturedItem.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.isKinematic = false;
+                        rb.useGravity = true;
+                    }
+
+                    _capturedItem = null;
+                }
             }
             else
             {
-                Ray raycast = new Ray(CameraTransform.transform.position, CameraTransform.transform.forward);
+                Ray ray = PlayerCamera.ScreenPointToRay(Input.mousePosition);
                 
-                if (Physics.Raycast(raycast, out RaycastHit hit, 10, LayerAtInteractItems))
+                if (Physics.Raycast(ray, out RaycastHit hit, 10, LayerAtInteractItems))
                 {
                     _capturedItem = hit.collider.gameObject;
 

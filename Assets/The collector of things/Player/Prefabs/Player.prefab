@@ -165,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104692f482f036644a6841119be442f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 2
-  RotationSpeed: 3
+  MovementSpeed: 4
+  RotationSpeed: 2
   CharacterController: {fileID: 8073691736942282583}
   CameraTransform: {fileID: 8599982302573902439}
   _minClampVertical: -60
@@ -187,3 +187,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   CameraTransform: {fileID: 8599982302573902439}
+  PlayerCamera: {fileID: 1267773608037969314}

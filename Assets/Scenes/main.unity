@@ -1653,14 +1653,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3060259466851049325, guid: 663eb8ca9700c7a46a5791f33473c04f, type: 3}
-      propertyPath: MovementSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3060259466851049325, guid: 663eb8ca9700c7a46a5791f33473c04f, type: 3}
-      propertyPath: RotationSpeed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6468091180737137737, guid: 663eb8ca9700c7a46a5791f33473c04f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1678,13 +1670,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5030909151545920510}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.6736064, y: 3.4701457, z: -5.8436985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5576373923851664925}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3678140774871458097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1797,6 +1789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5576373923851664925}
+  - component: {fileID: 5576373923851664926}
   m_Layer: 0
   m_Name: Garage
   m_TagString: Untagged
@@ -1872,6 +1865,20 @@ Transform:
   - {fileID: 1524936861434261464}
   m_Father: {fileID: 1784075555}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5576373923851664926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5055451271136126119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2778747b2fb97b4d9998c41f7e00a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftDoor: {fileID: 7149098206845663210}
+  _rightDoor: {fileID: 3049359724884684333}
 --- !u!65 &5736988692841428162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2088,13 +2095,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981755434761129442}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.0892272, y: 3.4701467, z: -5.8436985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5576373923851664925}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7739623003987440923
 MeshFilter:
   m_ObjectHideFlags: 0
